@@ -12,7 +12,7 @@ Page({
 
   onShareAppMessage: function() {
     return {
-      title: 'Renard 的甜品屋',
+      title: '运动之家',
       desc: '唯爱与美食不可辜负',
       path: '/pages/topicDetail/topicDetail?id=' + this.data.id
     }

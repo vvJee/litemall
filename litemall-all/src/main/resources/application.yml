@@ -4,8 +4,8 @@ spring:
   messages:
     encoding: UTF-8
 
-server:
-  port: 8080
+#server:
+#  port: 8080
 
 logging:
   level:

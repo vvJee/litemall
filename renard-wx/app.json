@@ -27,7 +27,7 @@
     "pages/groupon/grouponList/grouponList"
   ],
   "window": {
-    "navigationBarTitleText": "Renard",
+    "navigationBarTitleText": "运动之家",
     "enablePullDownRefresh": true,
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

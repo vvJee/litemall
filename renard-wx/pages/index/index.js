@@ -18,8 +18,8 @@ Page({
   },
   onShareAppMessage: function() {
     return {
-      title: 'Renard',
-      desc: '唯爱与美食不可辜负',
+      title: '运动之家',
+      desc: '唯爱与生活不可辜负',
       path: '/pages/index/index'
     }
   },
