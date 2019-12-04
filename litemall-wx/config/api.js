@@ -4,12 +4,14 @@ var WxApiRoot = 'https://www.mingshuoguoji.com/lmall/wx/';
 // 局域网测试使用
 // var WxApiRoot = 'http://192.168.0.101:8080/wx/';
 // 云平台部署时使用
-// var WxApiRoot = 'http://118.24.0.153:8080/wx/';
+// var WxApiRoot = 'http://122.51.199.160:8080/wx/';
 // 云平台上线时使用
 // var WxApiRoot = 'https://www.menethil.com.cn/wx/';
 
 module.exports = {
   IndexUrl: WxApiRoot + 'home/index', //首页数据接口
+  AboutUrl: WxApiRoot + 'home/about', //介绍信息
+
   CatalogList: WxApiRoot + 'catalog/index', //分类目录全部分类数据接口
   CatalogCurrent: WxApiRoot + 'catalog/current', //分类目录当前分类数据接口
 
