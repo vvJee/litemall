@@ -10,13 +10,8 @@
         <el-form-item label="商品名称" prop="name">
           <el-input v-model="goods.name" />
         </el-form-item>
-        <el-form-item label="专柜价格" prop="counterPrice">
+        <el-form-item label="市场售价" prop="counterPrice">
           <el-input v-model="goods.counterPrice" placeholder="0.00">
-            <template slot="append">元</template>
-          </el-input>
-        </el-form-item>
-        <el-form-item label="当前价格" prop="retailPrice">
-          <el-input v-model="goods.retailPrice" placeholder="0.00">
             <template slot="append">元</template>
           </el-input>
         </el-form-item>
@@ -415,7 +410,8 @@ export default {
       this.goods.categoryId = value[value.length - 1]
     },
     handleCancel: function() {
-      this.$router.push({ path: '/goods/goods' })
+      this.$store.dispatch('tagsView/delView', this.$route)
+      this.$router.push({ path: '/goods/list' })
     },
     handlePublish: function() {
       const finalGoods = {
@@ -429,6 +425,7 @@ export default {
           title: '成功',
           message: '创建成功'
         })
+        this.$store.dispatch('tagsView/delView', this.$route)
         this.$router.push({ path: '/goods/list' })
       }).catch(response => {
         MessageBox.alert('业务错误：' + response.data.errmsg, '警告', {

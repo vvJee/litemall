@@ -62,13 +62,13 @@
       <el-table-column align="center" label="详情" prop="detail">
         <template slot-scope="scope">
           <el-dialog :visible.sync="detailDialogVisible" title="商品详情">
-            <div v-html="goodsDetail" />
+            <div class="goods-detail-box" v-html="goodsDetail" />
           </el-dialog>
           <el-button type="primary" size="mini" @click="showDetail(scope.row.detail)">查看</el-button>
         </template>
       </el-table-column>
 
-      <el-table-column align="center" label="专柜价格" prop="counterPrice" />
+      <el-table-column align="center" label="市场售价" prop="counterPrice" />
 
       <el-table-column align="center" label="当前价格" prop="retailPrice" />
 
@@ -122,6 +122,9 @@
   .gallery {
     width: 80px;
     margin-right: 10px;
+  }
+  .goods-detail-box img {
+    width: 100%;
   }
 </style>
 
@@ -187,8 +190,7 @@ export default {
           title: '成功',
           message: '删除成功'
         })
-        const index = this.list.indexOf(row)
-        this.list.splice(index, 1)
+        this.getList()
       }).catch(response => {
         this.$notify.error({
           title: '失败',

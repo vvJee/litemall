@@ -2,7 +2,7 @@
 <view class="container">
 <view class="search">
     <navigator url="/pages/search/search" class="input">
-      <image class="icon"></image>
+      <van-icon name="search"/>
       <text class="txt">商品搜索, 共{{goodsCount}}款好物</text>
     </navigator>
   </view>
@@ -72,9 +72,10 @@
             <view class="text">
               <view class="header">
                 <text class="name">{{item.name}}</text>
-                <view class="capsule-tag">
-                  <zan-capsule color="#a78845" leftText="{{item.grouponMember}}人成团" rightText="立减{{item.grouponDiscount}}" />
-                </view>
+                <van-tag type="primary">{{item.grouponMember}}人成团</van-tag>
+              </view>
+              <view class="expire">
+                <van-tag round type="warning">有效期至 {{item.expireTime}}</van-tag>
               </view>
               <text class="desc">{{item.brief}}</text>
               <view class="price">
@@ -176,7 +177,7 @@
     </view>
   </view>
   <view class="good-grid" wx:for="{{floorGoods}}" wx:key="id">
-    <view class="h">
+    <view class="h" wx:if="{{item.goodsList.length>0}}">
       <text>{{item.name}}</text>
     </view>
     <view class="b">
@@ -190,7 +191,7 @@
         </view>
       </block>
     </view>
-    <navigator url="/pages/category/category?id={{item.id}}" class="t">
+    <navigator url="/pages/category/category?id={{item.id}}" class="t" wx:if="{{item.goodsList.length>0}}">
       <view class="txt">{{'更多'+item.name+'好物 >'}}</view>
     </navigator>
   </view>

@@ -19,6 +19,9 @@
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
     </el-form>
 
+    <div class="copyright">
+      Copyright © 2020 xxx.com 版权所有 <a href="http://www.example.com/">沪ICP备xxx号</a>
+    </div>
   </div>
 </template>
 
@@ -184,6 +187,21 @@ $light_gray:#eee;
       margin: 0px auto 40px auto;
       text-align: center;
       font-weight: bold;
+    }
+  }
+  .copyright {
+    font-size: 12px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 20px;
+    letter-spacing: 0.6px;
+    a {
+      font-weight: bold;
+      border-bottom: 1px solid #fff;
+      font-family: "PingFangSC-Semibold", sans-serif;
     }
   }
 }

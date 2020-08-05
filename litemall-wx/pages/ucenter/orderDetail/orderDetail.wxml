@@ -13,6 +13,7 @@
         <view class="btn active" bindtap="confirmOrder" wx:if="{{handleOption.confirm}}">确认收货</view>
         <view class="btn active" bindtap="deleteOrder" wx:if="{{handleOption.delete}}">删除订单</view>
         <view class="btn active" bindtap="refundOrder" wx:if="{{handleOption.refund}}">申请退款</view>
+        <view class="btn active" bindtap="aftersaleOrder" wx:if="{{handleOption.aftersale}}">申请售后</view>
       </view>
     </view>
   </view>
@@ -79,7 +80,7 @@
         <view class="t">快递公司：{{orderInfo.expName}}</view>
         <view class="b">物流单号：{{orderInfo.expNo}}</view>
       </view>
-      <image class="ti" src="/static/images/address_right.png" background-size="cover"></image>
+      <van-icon class="ti" name="arrow" />      
     </view>
     <view class="traces" wx:for="{{expressInfo.Traces}}" wx:key="item" wx:for-item="iitem" wx:if="{{ flag }}">
       <view class="trace">
